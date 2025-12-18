@@ -9,7 +9,7 @@ export enum MaterialTopic {
   REAL_NUMBERS = 'Sistem Bilangan Real',
   TRIGONOMETRY = 'Trigonometri',
   LIMIT_CONCEPT = 'Konsep Limit',
-  DIFFERENTIAL = 'Kalkulus Diferensial',
+  DIFFERENTIAL = 'Turunan Diferensial',
   INTEGRAL = 'Integral Tentu',
   VOLUME_CONCEPT = 'Konsep Volume'
 }
