@@ -33,6 +33,11 @@ const EXAMPLES: Record<string, Array<{ label: string; expression: string; params
     { label: "Volume Kerucut (Garis Linear)", expression: "x", params: { lowerBound: "0", upperBound: "4", axis: "x" } },
     { label: "Volume Bola (Setengah Lingkaran)", expression: "sqrt(9 - x^2)", params: { lowerBound: "-3", upperBound: "3", axis: "x" } },
     { label: "Volume Benda Putar Parabola", expression: "x^2", params: { lowerBound: "0", upperBound: "2", axis: "y" } }
+  ],
+  [CalculatorMode.TRIGONOMETRY]: [
+    { label: "Identitas Pythagoras", expression: "sin(x)^2 + cos(x)^2" },
+    { label: "Sudut Rangkap", expression: "sin(2x)" },
+    { label: "Penyederhanaan", expression: "(1 - cos(x))(1 + cos(x))" }
   ]
 };
 

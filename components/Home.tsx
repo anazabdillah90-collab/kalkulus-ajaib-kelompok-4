@@ -4,7 +4,8 @@ import {
   TrendingUp, 
   Scaling, 
   Box, 
-  Sigma 
+  Sigma,
+  Triangle
 } from 'lucide-react';
 
 interface HomeProps {
@@ -36,6 +37,12 @@ export const Home: React.FC<HomeProps> = ({ onSelectMode }) => {
       icon: <Box className="w-8 h-8 text-orange-500" />,
       desc: "Visualisasi & hitung volume benda putar.",
       color: "bg-orange-100"
+    },
+    {
+      mode: CalculatorMode.TRIGONOMETRY,
+      icon: <Triangle className="w-8 h-8 text-red-500" />,
+      desc: "Sederhanakan identitas & cari nilai sudut.",
+      color: "bg-red-100"
     }
   ];
 

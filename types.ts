@@ -2,7 +2,8 @@ export enum CalculatorMode {
   LIMIT = 'Limit Fungsi',
   DERIVATIVE = 'Turunan',
   AREA = 'Luas Daerah',
-  VOLUME = 'Volume Benda Putar'
+  VOLUME = 'Volume Benda Putar',
+  TRIGONOMETRY = 'Trigonometri'
 }
 
 export enum MaterialTopic {

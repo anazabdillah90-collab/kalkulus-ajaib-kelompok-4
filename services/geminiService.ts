@@ -17,6 +17,8 @@ export const solveMathProblem = async (
     contextParams = `Hitung luas dari x=${additionalParams.lowerBound} sampai x=${additionalParams.upperBound}.`;
   } else if (mode === CalculatorMode.VOLUME) {
     contextParams = `Putar mengelilingi sumbu ${additionalParams.axis} dari x=${additionalParams.lowerBound} sampai x=${additionalParams.upperBound}.`;
+  } else if (mode === CalculatorMode.TRIGONOMETRY) {
+    contextParams = `Selesaikan persoalan trigonometri ini (sederhanakan, buktikan identitas, atau cari nilai x).`;
   }
 
   const prompt = `

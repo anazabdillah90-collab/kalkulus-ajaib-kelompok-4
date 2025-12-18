@@ -48,7 +48,8 @@ export const MaterialViewer: React.FC<MaterialViewerProps> = ({ topic }) => {
                 h1: ({node, ...props}) => <h2 className="text-2xl font-bold text-orange-400 mt-6 mb-4" {...props} />,
                 h2: ({node, ...props}) => <h3 className="text-xl font-bold text-gray-700 mt-5 mb-3" {...props} />,
                 strong: ({node, ...props}) => <span className="font-bold text-pink-500" {...props} />,
-                blockquote: ({node, ...props}) => <div className="bg-pastel-cream border-l-4 border-pastel-yellow p-4 italic rounded-r-lg my-4" {...props} />,
+                // Fix: Use blockquote element instead of div to match ReactMarkdown component types
+                blockquote: ({node, ...props}) => <blockquote className="bg-pastel-cream border-l-4 border-pastel-yellow p-4 italic rounded-r-lg my-4" {...props} />,
               }}
             >
               {content}
