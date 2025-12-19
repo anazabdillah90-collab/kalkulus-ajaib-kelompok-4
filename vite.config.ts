@@ -5,7 +5,8 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => {
   // Memuat env file dari direktori saat ini.
   // Parameter ketiga '' memuat semua env (termasuk yang tidak berawalan VITE_)
-  const env = loadEnv(mode, process.cwd(), '');
+  // Use type casting to avoid "Property 'cwd' does not exist on type 'Process'" error if node types are missing
+  const env = loadEnv(mode, (process as any).cwd(), '');
   return {
     plugins: [react()],
     define: {
