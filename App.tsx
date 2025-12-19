@@ -4,7 +4,6 @@ import { Home } from './components/Home';
 import { CalculatorComponent } from './components/Calculator';
 import { MaterialViewer } from './components/MaterialViewer';
 import { CalculatorMode, MaterialTopic, ViewState } from './types';
-import { Menu } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -32,10 +31,10 @@ const App: React.FC = () => {
   };
 
   return (
-    // Flex-row-reverse ensures Sidebar is on the Right visually but logic remains standard Flex
-    <div className="flex flex-row-reverse h-screen overflow-hidden bg-pastel-cream">
+    // Layout berubah menjadi Flex Column untuk Navbar di atas
+    <div className="flex flex-col h-screen overflow-hidden bg-pastel-cream">
       
-      {/* Sidebar (Right) */}
+      {/* Navbar (Sebelumnya Sidebar) diletakkan di atas */}
       <Sidebar 
         isOpen={isSidebarOpen} 
         setIsOpen={setIsSidebarOpen} 
@@ -45,18 +44,9 @@ const App: React.FC = () => {
         onGoHome={handleGoHome}
       />
 
-      {/* Main Content Area (Left) */}
-      <main className="flex-1 relative overflow-y-auto h-full scroll-smooth">
-        
-        {/* Mobile Hamburger (Absolute top right of main content) */}
-        <button 
-          onClick={() => setIsSidebarOpen(true)}
-          className="fixed top-4 right-4 z-30 p-2 bg-white/80 rounded-full shadow-md text-gray-600 md:hidden hover:bg-white transition-colors"
-        >
-          <Menu size={24} />
-        </button>
-
-        <div className="min-h-full">
+      {/* Main Content Area */}
+      <main className="flex-1 relative overflow-y-auto scroll-smooth w-full">
+        <div className="min-h-full pb-10">
           {currentView === 'HOME' && (
             <Home onSelectMode={handleModeSelect} />
           )}
