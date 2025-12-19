@@ -8,7 +8,8 @@ export const solveMathProblem = async (
   expression: string,
   additionalParams: Record<string, string>
 ): Promise<CalculationResult> => {
-  const model = "gemini-3-pro-preview";
+  // Switched to Flash model to avoid 429 Quota errors and improve speed
+  const model = "gemini-3-flash-preview";
 
   let contextParams = "";
   if (mode === CalculatorMode.LIMIT) {
@@ -84,8 +85,8 @@ export const solveMathProblem = async (
     console.error("Gemini Error:", error);
     return {
       finalAnswer: "Error",
-      steps: ["Terjadi kesalahan sistem saat memproses permintaan Anda."],
-      explanation: "Mohon periksa koneksi jaringan Anda atau coba kembali beberapa saat lagi.",
+      steps: ["Terjadi kesalahan sistem saat memproses permintaan Anda.", "Mungkin kuota API harian telah habis atau terjadi gangguan koneksi."],
+      explanation: "Mohon coba kembali beberapa saat lagi.",
       graphData: []
     };
   }
